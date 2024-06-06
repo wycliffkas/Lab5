@@ -7,9 +7,7 @@ public class DeptEmployeeData {
     public static void main(String[] args) {
        DeptEmployee[] data = DeptEmployeeData.getDeptData();
        Arrays.sort(data, (employee1, employee2) -> employee1.getName().compareTo(employee2.getName()));
-
-        System.out.println(Arrays.toString(data));
-
+       System.out.println(Arrays.toString(data));
     }
 
     public static DeptEmployee[] getDeptData () {
