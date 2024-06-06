@@ -1,4 +1,4 @@
-package src;
+package hwsort.taska;
 
 import java.time.LocalDate;
 
