@@ -1,4 +1,4 @@
-package src.hwsort.taskd;
+package hwsort.taskd;
 
 import java.time.LocalDate;
 
