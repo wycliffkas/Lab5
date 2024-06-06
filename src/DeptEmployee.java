@@ -24,4 +24,8 @@ public class DeptEmployee {
     public double computeSalary() {
         return salary;
     }
+    @Override
+    public String toString() {
+        return "DeptEmployee [name=" + name + ", hireDate=" + hireDate;
+    }
 }
