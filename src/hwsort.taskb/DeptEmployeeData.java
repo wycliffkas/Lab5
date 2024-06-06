@@ -1,10 +1,10 @@
-package src;
+package hwsort.taskb;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class TaskBSolution {
+public class DeptEmployeeData {
     public static DeptEmployee[] prepareData() {
         DeptEmployee[] department = new DeptEmployee[5];
         department[0] = new Secretary("Wycliff", 2000.00, LocalDate.of(2002, 6, 10), 10);
@@ -21,7 +21,7 @@ public class TaskBSolution {
 
         DeptEmployee[] persons = prepareData();
         // Outside Name Comparator
-        TaskBSolution sol = new TaskBSolution();
+        DeptEmployeeData sol = new DeptEmployeeData();
         MyComparator com = sol.getComparator();
         System.out.println("Before Sorting: " + Arrays.toString(persons));
         Arrays.sort(persons,com);

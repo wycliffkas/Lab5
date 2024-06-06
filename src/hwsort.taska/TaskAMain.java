@@ -1,10 +1,10 @@
-package src;
+package hwsort.taska;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class TaskASolution {
+public class TaskAMain {
     public static void main(String[] args) {
         DeptEmployee[] department = new DeptEmployee[5];
         department[0] = new Secretary("Wycliff", 2000.00, LocalDate.of(2002, 6, 10), 10);
@@ -13,10 +13,8 @@ public class TaskASolution {
         department[3] = new Professor("Otim", 3000, LocalDate.of(2016, 4,2), 2);
         department[4] = new Professor("Stephanie", 3000, LocalDate.of(2016, 4,2), 3);
 
-        Arrays.sort(department, new TaskAComparator());
-
+        Arrays.sort(department, new NameComparator());
 
         System.out.println(Arrays.toString(department));
-
     }
 }

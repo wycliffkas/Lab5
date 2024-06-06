@@ -1,8 +1,8 @@
-package src;
+package hwsort.taska;
 
 import java.util.Comparator;
 
-public class TaskAComparator implements Comparator<DeptEmployee> {
+public class NameComparator implements Comparator<DeptEmployee> {
     @Override
     public int compare(DeptEmployee de1, DeptEmployee de2) {
 
