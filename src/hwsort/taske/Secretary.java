@@ -1,4 +1,4 @@
-package src;
+package src.hwsort.taske;
 
 import java.time.LocalDate;
 
@@ -22,4 +22,5 @@ public class Secretary extends DeptEmployee {
     public double computeSalary() {
         return salary + (12 * overtimeHours);
     }
+
 }

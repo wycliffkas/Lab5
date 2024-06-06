@@ -1,8 +1,8 @@
-package src;
+package src.hwsort.taskd;
 
 import java.time.LocalDate;
 
-public class Professor extends  DeptEmployee {
+public class Professor extends DeptEmployee {
     private int numberOfPublications;
 
     public Professor(String name, double salary, LocalDate hireDate, int numberOfPublications) {
@@ -18,8 +18,4 @@ public class Professor extends  DeptEmployee {
         this.numberOfPublications = numberOfPublications;
     }
 
-    @Override
-    public double computeSalary() {
-        return salary;
-    }
 }
