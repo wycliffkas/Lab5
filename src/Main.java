@@ -1,44 +1,35 @@
-package Problem2;
+package src;
 
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class MainProblem2 {
+public class Main {
     public static void main(String[] args) {
-        Professor[] professors = {
-                new Professor("Prof1", 50000, LocalDate.of(2002, 6, 25), 30),
-                new Professor("Prof2", 80000, LocalDate.of(2010, 7, 10), 40),
-                new Professor("Prof3", 90000, LocalDate.of(2012, 8, 9), 5)
-        };
+        DeptEmployee[] department = new DeptEmployee[5];
+        department[0] = new Secretary("Wycliff", 2000.00, LocalDate.of(2002, 6, 10), 10);
+        department[1] = new Secretary("Stella", 4000.00, LocalDate.of(2002, 6, 10), 13);
+        department[2] = new Professor("Okello", 3000, LocalDate.of(2016, 4,2), 4);
+        department[3] = new Professor("Otim", 3000, LocalDate.of(2016, 4,2), 2);
+        department[4] = new Professor("Stephanie", 3000, LocalDate.of(2016, 4,2), 3);
 
-        Secretary[] secretaries = {
-                new Secretary("Sec1", 20000, LocalDate.of(2020, 9, 9), 10),
-                new Secretary("Sec2", 15000, LocalDate.of(2022, 10, 5), 5)
-        };
-
-        DeptEmployee[] department = new DeptEmployee[professors.length + secretaries.length];
-
-        int index = 0;
-        for (Professor prof : professors) {
-            department[index++] = prof;
-        }
-        for (Secretary sec : secretaries) {
-            department[index++] = sec;
-        }
+        System.out.println("Do wishes to see the sum of all Professor and Secretary salary in the department");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Do you wish to see the sum of all Professor and Secretary salary in the department? (Y/N): ");
-        String response = scanner.nextLine();
-
-        if (response.equalsIgnoreCase("Y")) {
-            double totalSalary = 0;
-            for (DeptEmployee emp : department) {
-                totalSalary += emp.computeSalary();
-            }
-            System.out.println("Total salary: " + totalSalary);
-            System.out.println("Average salary: " + (totalSalary / department.length));
+        String response = scanner.nextLine().toLowerCase();
+        if(response.equals("y")) {
+            double salary = computeAveSalary(department);
+            System.out.println("Salary: " + salary);
         }
 
-        scanner.close();
+
+    }
+
+    public static double computeAveSalary(DeptEmployee[] department) {
+        double salary = 0;
+        for(DeptEmployee employee : department) {
+            salary +=  employee.computeSalary();
+        }
+
+        return salary / department.length;
     }
 }
